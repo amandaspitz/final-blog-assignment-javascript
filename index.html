@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Exploding Comics</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+  </head>
+  <body>
+    <header>
+      <div class="logo" id="logoButton"><img src="images/logo.png" alt="Exploding Comics Logo" title="Exploding Comics"></div>
+      <div>
+        <div class="custom-select">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+            
+            </select>
+            <div class="select-arrow">&#9660;</div>
+        </div>
+        <button id="toggleOrder">Oldest ↑</button>
+      </div>
+    </header>
+    <div class="container">
+      <main id="blogPosts">
+        
+      </main>
+    </div>
+    <button id="backButton" style="display: none"><span class="arrow">←</span> All Comics</button>
+    <div id="postPage" style="display: none">
+      <span class='post-title' id="postTitle"></span>
+      <span class='post-views' id="postViews"></span>
+      <img id="postImage" src="" alt="Post Image" />
+      <p class='post-text' id="postText"></p>
+      <span class='post-date' id="postDate"></span>
+      <span class='post-category' id="postCategory"></span>
+    </div>
+    <footer>
+      <!-- Footer content here -->
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

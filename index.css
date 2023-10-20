@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #f0f0f0;
+    padding: 10px 2.5% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 95%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #blogPosts {
+    flex-basis: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allow multiple rows */
+    justify-content: flex-start;
+  }
+  
+  /* Style individual blog post cards */
+  .blog-post {
+    flex-basis: calc(33.33% - 20px); /* Three posts per row with some spacing */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  #backButton {
+    padding: 7px 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    background: #95af7e;
+    font-weight: bold;
+    margin: 0 2.5%;
+  }
+  
+  #backButton:hover {
+    background-color: #555;
+  }
+  
+  #postPage {
+    max-width: 100%;
+    margin: 0 2.5%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-height: 750px;
+  }
+  
+  #postImage {
+    display: block;
+    height: 700px;
+    float: left;
+    margin-right: 30px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #blogPosts > div {
+    flex-basis: 25%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #blogPosts > div img {
+    width: 100%;
+  }
+  
+  #blogPosts > div p,
+  #blogPosts > div span {
+    padding: 0 5px;
+  }
+  
+  .post-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .post-views,
+  .post-category,
+  .post-date {
+    font-size: 12px;
+    float: right;
+    margin-top: 7px;
+  }
+  
+  .post-date {
+    float: left;
+  }
+  
+  .post-text {
+    font-size: 15px;
+    text-align: justify;
+  }
+  
+  #blogPosts > div img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+  
+  .logo img {
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .custom-select {
+    position: relative;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid #95af7e;
+  }
+  
+  .custom-select select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .select-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    color: #95af7e;
+    pointer-events: none;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .custom-select select:focus + .select-arrow {
+    background-color: #fff;
+  }
+  
+  #toggleOrder {
+    position: relative;
+    width: 100px;
+    background-color: #95af7e;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 11.5px;
+    top: -16px;
+    display: inline-block;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #postPage #postText {
+    margin: 20px 0;
+    text-align: left;
+    border-top: 1px solid #e7e7e7;
+    padding-top: 20px;
+    line-height: 23px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  @media screen and (max-width: 400px) {
+    #blogPosts > div {
+        flex-basis: 100%;
+      }
+  }
+  
+  @media screen and (min-width: 401px) and (max-width: 730px) {
+    /* Mobile: One column of posts */
+    .blog-post {
+      flex-basis: calc(100% - 20px); /* Full width with spacing */
+    }
+    #blogPosts > div {
+      flex-basis: 50%;
+    }
+    
+    #postImage {
+      width: 100%;
+      float: none;
+      margin-right: 0;
+    }
+  }
+  
+  @media screen and (min-width: 731px) and (max-width: 1199px) {
+    /* Tablet: Two columns of posts */
+    #blogPosts > div {
+      flex-basis: 33.3333333%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    #postImage {
+        width: 100%;
+        height: auto;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    /* Desktop: Four columns of posts */
+    .blog-post {
+      flex-basis: calc(25% - 20px); /* Four posts per row with spacing */
+    }
+  }
